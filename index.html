@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b0f" />
+    <meta name="description" content="Creator Intelligence — niche signals and content opportunities for serious creators." />
+    <title>Creator Intelligence</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#overview" data-route="overview" aria-label="Creator Intelligence home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <span class="brand-copy"><strong>Creator</strong><em>Intelligence</em></span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <button class="nav-item active" data-route="overview"><span data-icon="grid"></span><span>Overview</span></button>
+          <button class="nav-item" data-route="trends"><span data-icon="trend"></span><span>Trend radar</span><span class="nav-count" id="nav-trend-count">5</span></button>
+          <button class="nav-item" data-route="opportunities"><span data-icon="target"></span><span>Opportunity gap</span><span class="pulse-dot"></span></button>
+          <button class="nav-item" data-route="watchlist"><span data-icon="users"></span><span>Watchlist</span><span class="nav-count" id="nav-watch-count">6</span></button>
+          <button class="nav-item" data-route="ideas"><span data-icon="spark"></span><span>Content ideas</span></button>
+          <button class="nav-item" data-route="brief"><span data-icon="file"></span><span>Weekly brief</span></button>
+        </nav>
+
+        <div class="sidebar-section-label">Intelligence</div>
+        <nav class="secondary-nav">
+          <button class="nav-item" data-route="patterns"><span data-icon="nodes"></span><span>Pattern detection</span></button>
+          <button class="nav-item" id="ask-nav"><span data-icon="ask"></span><span>Ask intelligence</span><kbd>⌘K</kbd></button>
+        </nav>
+
+        <div class="sidebar-foot">
+          <div class="data-status"><span></span><div><strong>Demo signals live</strong><small>Refreshed 4 min ago</small></div></div>
+          <button class="profile-button" aria-label="Account menu">
+            <span class="avatar">AK</span><span><strong>Alex Kim</strong><small>Creator Pro</small></span><span data-icon="chevron"></span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menu-button" aria-label="Open menu"><span data-icon="menu"></span></button>
+          <div class="niche-control">
+            <span class="eyebrow">Tracking niche</span>
+            <button class="niche-button" id="niche-button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="niche-orb" id="niche-orb"></span><strong id="current-niche">AI</strong><span data-icon="chevron"></span>
+            </button>
+            <div class="niche-menu" id="niche-menu" role="listbox" aria-label="Select niche"></div>
+          </div>
+          <div class="topbar-meta">
+            <div class="market-clock"><span class="live-dot"></span><span>Signal window</span><strong>7 DAYS</strong></div>
+            <button class="top-action" id="export-button"><span data-icon="download"></span><span>Export brief</span></button>
+            <button class="icon-button" id="notifications-button" aria-label="Notifications"><span data-icon="bell"></span><i>3</i></button>
+          </div>
+        </header>
+
+        <div class="content" id="app-content" tabindex="-1"></div>
+      </main>
+    </div>
+
+    <div class="scrim" id="scrim"></div>
+    <aside class="detail-drawer" id="detail-drawer" aria-hidden="true">
+      <button class="drawer-close icon-button" id="drawer-close" aria-label="Close panel"><span data-icon="close"></span></button>
+      <div id="drawer-content"></div>
+    </aside>
+
+    <div class="command-modal" id="ask-modal" role="dialog" aria-modal="true" aria-labelledby="ask-title" aria-hidden="true">
+      <div class="ask-shell">
+        <div class="ask-head">
+          <div class="ask-brand"><span data-icon="spark"></span></div>
+          <div><span class="eyebrow">Research copilot</span><h2 id="ask-title">Ask Creator Intelligence</h2></div>
+          <button class="icon-button" id="ask-close" aria-label="Close assistant"><span data-icon="close"></span></button>
+        </div>
+        <div class="conversation" id="conversation"></div>
+        <div class="suggested-questions" id="suggested-questions"></div>
+        <form class="ask-form" id="ask-form">
+          <input id="ask-input" autocomplete="off" placeholder="Ask about trends, competitors, or what to make next…" />
+          <button type="submit" aria-label="Send question"><span data-icon="arrow"></span></button>
+        </form>
+        <p class="ask-disclaimer">Responses are grounded in the signals shown in this demo workspace.</p>
+      </div>
+    </div>
+
+    <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
